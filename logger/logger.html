@@ -1,17 +1,19 @@
 <html>
    <head>
       <title>Logger</title>
-      <script type="text/javascript" src="js/jquery.js" />
-      <script type="text/javascript" src="http://localhost:5984/_utils/script/jquery.couch.js" />
+      <script type="text/javascript" src="js/couch.js" ></script>
    </head>
    <body>
        Logger File Test
+       <script type="text/javascript">
+            //var headers = {'Content-Type':'application/json', "Accept":'application/json', "Host":"127.0.0.1:5984"};
 
-        <script type="text/javascript">
-            document.write(unescape("%3Cscript src='js/logger.js' type='text/javascript'%3E%3C/script%3E"));
-	</script>
-	<script type="text/javascript">
-            logger("scl");
+            var db = new CouchDB("logger");
+            db.createDb();
+
+            var doc = {"_id" : "Test", "name" : "Fabio Batalha"};
+            var saved_doc = db.save(doc);
+            alert("Done");
         </script>
    </body>
 </html>
