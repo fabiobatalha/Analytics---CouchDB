@@ -1,19 +1,20 @@
 <html>
    <head>
       <title>Logger</title>
-      <script type="text/javascript" src="js/couch.js" ></script>
+      <script src="http://couchdb/couchdb-xd/_design/couchdb-xd/couchdb.js" type="text/javascript"></script>
    </head>
    <body>
        Logger File Test
+  <div id="images">
+  </div>
        <script type="text/javascript">
-            //var headers = {'Content-Type':'application/json', "Accept":'application/json', "Host":"127.0.0.1:5984"};
+            Couch.init(function() {
+                // execute on ready
+            });
+            var server = new Couch.Server('http://couchdb','','');
 
-            var db = new CouchDB("logger");
-            db.createDb();
+            server.create(server, 'test', function(resp) { });
 
-            var doc = {"_id" : "Test", "name" : "Fabio Batalha"};
-            var saved_doc = db.save(doc);
-            alert("Done");
         </script>
    </body>
 </html>

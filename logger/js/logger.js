@@ -1,6 +1,6 @@
 function request (path, method, headers, body, callback) {
   if (!headers) {
-    headers = {'Content-Type':'application/json', "Accept":'application/json', "Host":"127.0.0.1:5984"};
+    headers = {'Content-Type':'application/json', "Accept":'application/json', "Host":"couchdb:5984"};
   }
   if (!method) {
     method = "GET"
@@ -11,7 +11,7 @@ function request (path, method, headers, body, callback) {
     }
   }
 
-  var client = http.createClient(5984, "jsregistry");
+  var client = http.createClient(5984, "couchdb");
   var request = client.request(method, path, headers);
   request.addListener("response", function (response) {
     var buffer = ''
@@ -27,15 +27,14 @@ function request (path, method, headers, body, callback) {
 
 }
 
-function logger(val){
-    /*
-   $.couch.db("logger").saveDoc(
-     {host: "address", name: "Wilma", mobile: "555-003"},
-     {success: function() { alert("Saved ok."); }}
-   );
-   */
-    var headers = {'Content-Type':'application/json', "Accept":'application/json', "Host":"127.0.0.1:5984"};
-    
+function dbs(){
+alert ("starting");
+ result = request("/_all_dbs","GET");
+alert ("Done");
+ alert(result);
+}
+
+function logger(val){  
     var db = new CouchDB("logger",headers);
     db.createDb();
 
