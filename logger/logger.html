@@ -1,20 +1,15 @@
 <html>
    <head>
       <title>Logger</title>
-      <script src="http://couchdb/couchdb-xd/_design/couchdb-xd/couchdb.js" type="text/javascript"></script>
+      <script src="js/jquery.js" type="text/javascript"></script>
+      <script src="js/logger.js" type="text/javascript"></script>
    </head>
    <body>
        Logger File Test
   <div id="images">
   </div>
        <script type="text/javascript">
-            Couch.init(function() {
-                // execute on ready
-            });
-            var server = new Couch.Server('http://couchdb','','');
-
-            server.create(server, 'test', function(resp) { });
-
+           logger("tst");
         </script>
    </body>
 </html>

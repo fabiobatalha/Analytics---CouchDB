@@ -1,4 +1,16 @@
 <?
+/**
+ * Analytics CouchDB Connection API.
+ *
+ * @package     Analytics CouchDB
+ * @author      Fabio Batalha C. Santos (fabio.santos@bireme.org)
+ * @copyright
+ *
+ */
+
+/*
+ * Edit this file in UTF-8 - Test String "áéíóú"
+ */
 class CouchDBResponse {
 
     private $raw_response = '';
