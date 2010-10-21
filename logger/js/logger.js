@@ -73,6 +73,8 @@ function logger(val){
        "url": window.location.href,
        "host": window.location.host,
        "urlParams": urlParams(window.location.href),
+       "referrer": document.referrer,
+       "referrerParams":  urlParams(document.referrer),
        "location": location,
        "appCodeName": navigator.appCodeName,
        "appVersion": navigator.appVersion,
